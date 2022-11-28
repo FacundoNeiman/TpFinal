@@ -61,12 +61,10 @@ public abstract class Vehiculo {
 
     @Override
     public String toString() {
-        return "Vehiculo{" +
-                "patente='" + patente + '\'' +
+        return "patente='" + patente + '\'' +
                 ", marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", cantRuedas=" + cantRuedas +
-                ", kilometraje=" + kilometraje +
-                '}';
+                ", kilometraje=" + kilometraje;
     }
 }
