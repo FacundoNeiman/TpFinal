@@ -1,4 +1,4 @@
-
+import mundial.*;
 import sistemaGarage.*;
 
 public class Main {
