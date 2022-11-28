@@ -9,24 +9,32 @@ public class Garage {
 
     public Garage(double precioCambioRueda, int capacidadMaxima){
         this.vehiculos = new ArrayList<>();
-        setCapacidadMaxima(capacidadMaxima);
-        setPrecioCambioRueda(precioCambioRueda);
+        abrirGarage(precioCambioRueda,capacidadMaxima);
     }
 
     public Garage(){
         this.vehiculos = new ArrayList<>();
     }
 
-    public void abrirGarage(double precio, int capacidadMaxima){
-
+    public void abrirGarage(double precioCambioRueda, int capacidadMaxima){
+        setCapacidadMaxima(capacidadMaxima);
+        setPrecioCambioRueda(precioCambioRueda);
     }
 
     public boolean registrarVehiculo(Vehiculo vehiculo){
-        return false;
+        if (this.vehiculos.size() < getCantidadVehiculos()) {
+            this.vehiculos.add(vehiculo);
+            System.out.println("Vehículo añadido exitosamente!");
+            return true;
+        }
+        else{
+            System.out.println("No se ha podido añadir al vehiculo. Garage lleno");
+            return false;
+        }
     }
 
-    public boolean retirarVehiculo(Vehiculo vehiculo){
-        return false;
+    public void retirarVehiculo(Vehiculo vehiculo){
+        this.vehiculos.remove(vehiculo);
     }
 
     public int getCantidadVehiculos(){
@@ -34,11 +42,19 @@ public class Garage {
     }
 
     public double getPrecioTotalCambioRueda() {
-        return 0;
+        double acumPrecio = 0;
+        for (Vehiculo vehiculo: this.vehiculos) {
+            acumPrecio += (vehiculo.getCantRuedas() * getPrecioCambioRueda());
+        }
+        return acumPrecio;
     }
 
     public double getKilometrajeMedio(){
-        return 0;
+        double acumKilometraje = 0;
+        for (Vehiculo vehiculo: this.vehiculos) {
+            acumKilometraje += vehiculo.getKilometraje();
+        }
+        return acumKilometraje / this.vehiculos.size();
     }
 
     public double getPrecioCambioRueda() {
