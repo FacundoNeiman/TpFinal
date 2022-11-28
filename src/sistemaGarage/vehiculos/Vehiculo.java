@@ -58,4 +58,15 @@ public abstract class Vehiculo {
     public void setKilometraje(double kilometraje) {
         this.kilometraje = kilometraje;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "patente='" + patente + '\'' +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", cantRuedas=" + cantRuedas +
+                ", kilometraje=" + kilometraje +
+                '}';
+    }
 }

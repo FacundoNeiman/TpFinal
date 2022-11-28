@@ -74,4 +74,13 @@ public class Garage {
     public void setCapacidadMaxima(int capacidadMaxima) {
         this.capacidadMaxima = capacidadMaxima;
     }
+
+    @Override
+    public String toString() {
+        return "Garage{" +
+                "precioCambioRueda=" + precioCambioRueda +
+                ", capacidadMaxima=" + capacidadMaxima +
+                ", vehiculos=" + vehiculos +
+                '}';
+    }
 }

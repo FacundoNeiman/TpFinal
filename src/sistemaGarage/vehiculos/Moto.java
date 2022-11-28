@@ -19,4 +19,11 @@ public class Moto extends Vehiculo{
     public void setCilindrada(int cilindrada) {
         this.cilindrada = cilindrada;
     }
+
+    @Override
+    public String toString() {
+        return "Moto{" +
+                "cilindrada=" + cilindrada +
+                '}';
+    }
 }

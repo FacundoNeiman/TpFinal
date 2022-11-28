@@ -19,4 +19,11 @@ public class Coche extends Vehiculo{
     public void setCantPuertas(int cantPuertas) {
         this.cantPuertas = cantPuertas;
     }
+
+    @Override
+    public String toString() {
+        return "Coche{" +
+                "cantPuertas=" + cantPuertas +
+                '}';
+    }
 }
