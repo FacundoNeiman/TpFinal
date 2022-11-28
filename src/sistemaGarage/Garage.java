@@ -1,4 +1,6 @@
-package garage;
+package sistemaGarage;
+
+import sistemaGarage.vehiculos.Vehiculo;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package garage;
+package sistemaGarage.vehiculos;
 
 public class Coche extends Vehiculo{
     private int cantPuertas;

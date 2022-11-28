@@ -1,4 +1,4 @@
-package garage;
+package sistemaGarage.vehiculos;
 
 public abstract class Vehiculo {
     private String patente;

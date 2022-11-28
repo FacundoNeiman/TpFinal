@@ -1,4 +1,4 @@
-package garage;
+package sistemaGarage.vehiculos;
 
 public class Moto extends Vehiculo{
     private int cilindrada;
