@@ -24,7 +24,7 @@ public class Garage {
     }
 
     public boolean registrarVehiculo(Vehiculo vehiculo){
-        if (this.vehiculos.size() < getCantidadVehiculos()) {
+        if (hayEspacio()) {
             this.vehiculos.add(vehiculo);
             System.out.println("Vehículo añadido exitosamente!");
             return true;
@@ -33,6 +33,10 @@ public class Garage {
             System.out.println("No se ha podido añadir al vehiculo. Garage lleno");
             return false;
         }
+    }
+
+    private boolean hayEspacio(){
+        return getCantidadVehiculos() < getCapacidadMaxima();
     }
 
     public void retirarVehiculo(Vehiculo vehiculo){
