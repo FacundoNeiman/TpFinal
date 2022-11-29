@@ -17,13 +17,15 @@ public abstract class EtapaMundial {
 
     public void addPartido(Partido partido){
         this.partidos.add(partido);
+        partido.getLocal().addPartido(partido);
+        partido.getVisitante().addPartido(partido);
     }
 
     protected ArrayList<Partido> getPartidos(){
         return this.partidos;
     }
 
-    public abstract ArrayList<Partido> getEquiposQueAvanzan();
+    public abstract ArrayList<Equipo> getEquiposQueAvanzan();
 
     public String getDescripcionEtapa() {
         return descripcionEtapa;
