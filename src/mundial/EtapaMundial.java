@@ -20,7 +20,7 @@ public abstract class EtapaMundial {
 
     public abstract void addPartido(Partido partido);
 
-    public void addEquipo(Equipo equipo){
+    protected void addEquipo(Equipo equipo){
         if(!equipoYaExistente(equipo)){
             getEquipos().add(equipo);
         }
@@ -44,6 +44,14 @@ public abstract class EtapaMundial {
 
     protected ArrayList<Equipo> getEquipos(){
         return this.equipos;
+    }
+
+    protected void setPartidos(ArrayList<Partido> partidos) {
+        this.partidos = partidos;
+    }
+
+    protected void setEquipos(ArrayList<Equipo> equipos) {
+        this.equipos = equipos;
     }
 
     public abstract ArrayList<Equipo> getEquiposQueAvanzan();
