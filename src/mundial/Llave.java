@@ -23,7 +23,7 @@ public class Llave extends EtapaMundial{
                 ganadores.add(partido.getVisitante());
             }
         }
-
+        super.setEquipos(ganadores);
         return ganadores;
     }
 
