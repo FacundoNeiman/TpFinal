@@ -19,16 +19,18 @@ public class Main {
         Equipo arabia = new Equipo("Arabia Saudita");
         Equipo mexico = new Equipo("México");
         Grupo grupoC = new Grupo();
-        Date fechaAleatoria = new Date(2022, 11, 20);
-        grupoC.addPartido(new Partido(fechaAleatoria, argentina, arabia, new Resultado(1,2)));
-        grupoC.addPartido(new Partido(fechaAleatoria,mexico,polonia, new Resultado(0,0)));
-        grupoC.addPartido(new Partido(fechaAleatoria,mexico, argentina,new Resultado(0,2)));
-        grupoC.addPartido(new Partido(fechaAleatoria,arabia,polonia,new Resultado(0,2)));
+        Date fecha = new Date(2022, 11, 20);
+        grupoC.addPartido(new Partido(fecha, argentina, arabia, new Resultado(1,2)));
+        grupoC.addPartido(new Partido(fecha,mexico,polonia, new Resultado(0,0)));
+        grupoC.addPartido(new Partido(fecha,mexico, argentina,new Resultado(0,2)));
+        grupoC.addPartido(new Partido(fecha,arabia,polonia,new Resultado(0,2)));
+        grupoC.addPartido(new Partido(fecha,argentina,polonia,new Resultado(2,0)));
+        grupoC.addPartido(new Partido(fecha,arabia,mexico,new Resultado(1,2)));
 
         System.out.println(grupoC.getEquiposQueAvanzan());
 
         Llave op1 = new Llave("Octavos de Final");
-        op1.addPartido(new Partido(fechaAleatoria, argentina, mexico, new Resultado(2,0)));
+        op1.addPartido(new Partido(fecha, argentina, mexico, new Resultado(1,0)));
         for (Equipo e : op1.getEquiposQueAvanzan()) {
             System.out.println(e.getNombre());
         }
