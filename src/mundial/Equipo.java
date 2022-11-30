@@ -40,4 +40,9 @@ public class Equipo {
     private void setPuntaje() {
         this.puntaje = 0;
     }
+    
+    @Override
+    public String toString() {
+        return getNombre() + " - " + getPuntaje();
+    }
 }
