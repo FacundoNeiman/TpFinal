@@ -47,5 +47,15 @@ public class Partido {
 
     public void setResultado(Resultado resultado) {
         this.resultado = resultado;
+        if(resultado.ganoLocal()){
+            getLocal().addPuntaje(3);
+        }
+        else if(resultado.empate()){
+            getLocal().addPuntaje(1);
+            getVisitante().addPuntaje(1);
+        }
+        else{
+            getVisitante().addPuntaje(3);
+        }
     }
 }
