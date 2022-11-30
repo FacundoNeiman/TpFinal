@@ -22,7 +22,10 @@ public class Resultado {
     }
 
     public void setGolesVisitante(int golesVisitante) {
-        this.golesVisitante = golesVisitante;
+        this.golesVisitante = 0;
+        if(golesVisitante >=0){
+            this.golesVisitante = golesVisitante;
+        }
     }
 
     public int getGolesLocal() {
@@ -30,6 +33,9 @@ public class Resultado {
     }
 
     public void setGolesLocal(int golesLocal) {
-        this.golesLocal = golesLocal;
+        this.golesLocal = 0;
+        if(golesLocal >= 0){
+            this.golesLocal = golesLocal;
+        }
     }
 }
