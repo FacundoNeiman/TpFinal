@@ -17,16 +17,18 @@ public class Grupo extends EtapaMundial{
     public ArrayList<Equipo> getEquiposQueAvanzan() {
         //TODO
         ArrayList<Equipo> equiposQueAvanzan = new ArrayList<>();
-        ArrayList<Equipo> equipos = new ArrayList<>();
-        for (Partido partido : super.getPartidos()) {
-            Equipo local = partido.getLocal();
-            Equipo visitante = partido.getVisitante();
-
-            if(partido.getResultado().ganoLocal()){
-                
-            }
+        for (Equipo equipo : super.getEquipos()) {
+            
         }
 
         return equiposQueAvanzan;
+    }
+
+    @Override
+    public void addPartido(Partido partido) {
+        super.getPartidos().add(partido);
+        partido.getLocal().addPartido(partido);
+        partido.getVisitante().addPartido(partido);
+        
     }
 }
