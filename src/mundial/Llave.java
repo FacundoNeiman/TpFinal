@@ -33,6 +33,8 @@ public class Llave extends EtapaMundial{
             super.getPartidos().add(partido);
             partido.getLocal().addPartido(partido);
             partido.getVisitante().addPartido(partido);
+            super.addEquipo(partido.getLocal());
+            super.addEquipo(partido.getVisitante());
         }
         else{
             System.out.println("No puede haber empate en un partido de Llave");

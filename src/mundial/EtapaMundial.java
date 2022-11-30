@@ -15,9 +15,28 @@ public abstract class EtapaMundial {
     public EtapaMundial(String descripcionEtapa){
         setDescripcionEtapa(descripcionEtapa);
         this.partidos = new ArrayList<>();
+        this.equipos = new ArrayList<>();
     }
 
     public abstract void addPartido(Partido partido);
+
+    public void addEquipo(Equipo equipo){
+        if(!equipoYaExistente(equipo)){
+            getEquipos().add(equipo);
+        }
+    }
+
+    private boolean equipoYaExistente(Equipo equipo){
+        boolean existe = false;
+        int i = 0;
+        while(!existe && i < getEquipos().size()){
+            if(equipo == getEquipos().get(i)){
+                existe = true;
+            }
+            i++;
+        }
+        return existe;
+    }
 
     protected ArrayList<Partido> getPartidos(){
         return this.partidos;
