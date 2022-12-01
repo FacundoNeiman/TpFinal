@@ -17,7 +17,13 @@ public class Main {
          Moto v4 = new Moto("LMN391", "Honda", "X-50", 2, 29050, 150);
          Coche v5 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
          Moto v6 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
-        // System.out.println(garage);
+         garage.registrarVehiculo(v1);
+        garage.registrarVehiculo(v2);
+        garage.registrarVehiculo(v3);
+        garage.registrarVehiculo(v4);
+        garage.registrarVehiculo(v5);
+        garage.registrarVehiculo(v6);
+         System.out.println(garage);
         //TODO: CONECTAR GARAGE Y PRODE, Y PROBAR BIEN LO DE GARAGE
 
         Equipo qatar = new Equipo("Qatar");
