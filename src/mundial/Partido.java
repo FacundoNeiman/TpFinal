@@ -58,4 +58,11 @@ public class Partido {
             getVisitante().addPuntaje(3);
         }
     }
+
+    @Override
+    public String toString() {
+        return this.getLocal().getNombre() + " " + this.getResultado() + " " + this.getVisitante().getNombre();
+    }
+    
+    
 }
