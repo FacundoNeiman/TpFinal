@@ -43,7 +43,12 @@ public class Grupo extends EtapaMundial{
 
     @Override
     public void mostrarClasificados(){
-        System.out.println(super.getDescripcionEtapa() + ": " + this.getEquiposQueAvanzan());
+        System.out.println(super.getDescripcionEtapa() + ": ");
+        String aux = "[";
+        aux += this.getEquiposQueAvanzan().get(0).getNombre() + " " + this.getEquiposQueAvanzan().get(0).getPuntaje() + ", "; 
+        aux += this.getEquiposQueAvanzan().get(1).getNombre() + " " + this.getEquiposQueAvanzan().get(1).getPuntaje();
+        aux += "]";
+        System.out.println(aux);
     }
 
     @Override
