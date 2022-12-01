@@ -40,4 +40,16 @@ public class Llave extends EtapaMundial{
             System.out.println("No puede haber empate en un partido de Llave");
         }
     }
+
+    @Override
+    public void mostrarEtapa() {
+        System.out.println(super.getDescripcionEtapa() + ": " + super.getEquipos());
+        
+    }
+
+    @Override
+    public void mostrarClasificados() {
+        System.out.println(super.getEquipos());
+        
+    }
 }

@@ -18,7 +18,13 @@ public abstract class EtapaMundial {
         this.equipos = new ArrayList<>();
     }
 
+    public abstract ArrayList<Equipo> getEquiposQueAvanzan();
+
     public abstract void addPartido(Partido partido);
+
+    public abstract void mostrarEtapa();
+
+    public abstract void mostrarClasificados();
 
     protected void addEquipo(Equipo equipo){
         if(!equipoYaExistente(equipo)){
@@ -42,7 +48,7 @@ public abstract class EtapaMundial {
         return this.partidos;
     }
 
-    protected ArrayList<Equipo> getEquipos(){
+    public ArrayList<Equipo> getEquipos(){
         return this.equipos;
     }
 
@@ -53,8 +59,6 @@ public abstract class EtapaMundial {
     protected void setEquipos(ArrayList<Equipo> equipos) {
         this.equipos = equipos;
     }
-
-    public abstract ArrayList<Equipo> getEquiposQueAvanzan();
 
     public String getDescripcionEtapa() {
         return descripcionEtapa;

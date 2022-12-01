@@ -40,4 +40,15 @@ public class Grupo extends EtapaMundial{
         super.addEquipo(partido.getLocal());
         super.addEquipo(partido.getVisitante());
     }
+
+    @Override
+    public void mostrarClasificados(){
+        System.out.println(super.getDescripcionEtapa() + ": " + this.getEquiposQueAvanzan());
+    }
+
+    @Override
+    public void mostrarEtapa() {
+        System.out.println(super.getDescripcionEtapa() + ": " + super.getEquipos());
+        
+    }
 }
