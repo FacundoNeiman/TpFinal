@@ -18,6 +18,7 @@ public class Main {
          Coche v5 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
          Moto v6 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
         // System.out.println(garage);
+        //TODO: CONECTAR GARAGE Y PRODE, Y PROBAR BIEN LO DE GARAGE
 
         Equipo qatar = new Equipo("Qatar");
         Equipo paisesBajos = new Equipo("Países Bajos");
