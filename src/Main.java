@@ -9,23 +9,34 @@ import sistemaGarage.vehiculos.*;
 
 public class Main {
     public static void main(String[] args) {
-         Garage garage = new Garage();
-         garage.abrirGarage(500,5);
-         Coche v1 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
-         Moto v2 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
-         Coche v3 = new Coche("AA125BA", "Fiat", "600", 4, 750000, 5);
-         Moto v4 = new Moto("LMN391", "Honda", "X-50", 2, 29050, 150);
-         Coche v5 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
-         Moto v6 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
-         garage.registrarVehiculo(v1);
+        //GARAGE: 
+        System.out.println("Garage: \n");
+        Garage garage = new Garage();
+        garage.abrirGarage(500,5);
+        Coche v1 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
+        Moto v2 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
+        Coche v3 = new Coche("AA125BA", "Fiat", "600", 4, 750000, 5);
+        Moto v4 = new Moto("LMN391", "Honda", "X-50", 2, 29050, 150);
+        Coche v5 = new Coche("AB566AA", "Audi", "V-10", 4, 100, 5);
+        Moto v6 = new Moto("EKJ903", "Suzuki", "Master", 2, 350000, 300);
+        garage.registrarVehiculo(v1);
         garage.registrarVehiculo(v2);
         garage.registrarVehiculo(v3);
         garage.registrarVehiculo(v4);
         garage.registrarVehiculo(v5);
+        garage.registrarVehiculo(v5);
         garage.registrarVehiculo(v6);
-         System.out.println(garage);
-        //TODO: CONECTAR GARAGE Y PRODE, Y PROBAR BIEN LO DE GARAGE
+        garage.retirarVehiculo(v6);
+        garage.retirarVehiculo(v3);
+        System.out.println("Actualmente hay " + garage.getCantidadVehiculos() + " vehículos en el garage");
+        System.out.println("Precio total del cambio de ruedas del garage: $" + garage.getPrecioTotalCambioRueda());
+        System.out.println("Kilometraje medio del garage: " + garage.getKilometrajeMedio() + " km");
+        
+        System.out.println();
+        System.out.println();
 
+        //MUNDIAL: 
+        System.out.println("Mundial: \n");
         Equipo qatar = new Equipo("Qatar");
         Equipo paisesBajos = new Equipo("Países Bajos");
         Equipo ecuador = new Equipo("Ecuador");
@@ -156,24 +167,21 @@ public class Main {
         System.out.println();
 
         Llave cuartos = new Llave("Cuartos");
-        ArrayList<Equipo> cuartistas = octavos.getEquiposQueAvanzan();
-        for (int i = 0; i < cuartistas.size() - 1; i+= 2) {
-           cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(i), cuartistas.get(i+1), randomResult(false),false));
+        for (int i = 0; i < octavos.getEquiposQueAvanzan().size() - 1; i+= 2) {
+           cuartos.addPartido(new Partido(createRandomDate(), octavos.getEquiposQueAvanzan().get(i), octavos.getEquiposQueAvanzan().get(i+1), randomResult(false),false));
         }
         cuartos.mostrarEtapa();
         System.out.println();
         
         Llave semifinales = new Llave("Semifinales");
-        ArrayList<Equipo> semifinalistas = cuartos.getEquiposQueAvanzan();
-        for (int i = 0; i < semifinalistas.size() - 1; i+= 2) {
-            semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(i), semifinalistas.get(i+1), randomResult(false),false));
+        for (int i = 0; i < cuartos.getEquiposQueAvanzan().size() - 1; i+= 2) {
+            semifinales.addPartido(new Partido(createRandomDate(), cuartos.getEquiposQueAvanzan().get(i), cuartos.getEquiposQueAvanzan().get(i+1), randomResult(false),false));
         }
         semifinales.mostrarEtapa();
         System.out.println();
        
         Llave finales = new Llave("Final");
-        ArrayList<Equipo> finalistas = semifinales.getEquiposQueAvanzan();
-        finales.addPartido(new Partido(createRandomDate(), finalistas.get(0), finalistas.get(1), randomResult(false),false));
+        finales.addPartido(new Partido(createRandomDate(), semifinales.getEquiposQueAvanzan().get(0), semifinales.getEquiposQueAvanzan().get(1), randomResult(false),false));
         finales.mostrarEtapa();
         System.out.println();
         System.out.print("Campeon: ");
