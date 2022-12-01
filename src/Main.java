@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -44,9 +45,9 @@ public class Main {
         Grupo grupoB = new Grupo("Grupo B");
         grupoB.addPartido(new Partido(createRandomDate(), polonia, mexico, new Resultado(0,0)));
         grupoB.addPartido(new Partido(createRandomDate(), francia, dinamarca, new Resultado(4,1)));
-        grupoB.addPartido(new Partido(createRandomDate(), mexico, dinamarca, new Resultado(0,1)));
+        grupoB.addPartido(new Partido(createRandomDate(), mexico, dinamarca, new Resultado(1,1)));
         grupoB.addPartido(new Partido(createRandomDate(), francia, polonia, new Resultado(2,1)));
-        grupoB.addPartido(new Partido(createRandomDate(), mexico, francia, new Resultado(1,0)));
+        grupoB.addPartido(new Partido(createRandomDate(), mexico, francia, new Resultado(1,4)));
         grupoB.addPartido(new Partido(createRandomDate(), dinamarca, polonia, new Resultado(1,0)));
 
         Grupo grupoC = new Grupo("Grupo C");
@@ -104,7 +105,8 @@ public class Main {
         finales.addPartido(new Partido(createRandomDate(), finalistas.get(0), finalistas.get(1), new Resultado(1, 0)));
         finales.mostrarEtapa();
         System.out.println();
-        System.out.println("Campeon: " + finales.getEquiposQueAvanzan());
+        System.out.print("Campeon: ");
+        finales.mostrarClasificados();
     }
 
     public static int createRandomIntBetween(int start, int end) {
@@ -112,9 +114,10 @@ public class Main {
     }
 
     public static Date createRandomDate() {
-        int day = createRandomIntBetween(1, 31);
+        int day = createRandomIntBetween(1, 30);
         int month = createRandomIntBetween(11, 12);
         int year = 2022;
-        return new Date(day, month, year);
+        LocalDate aux = LocalDate.of(year, month, day);
+        return java.sql.Date.valueOf(aux);
     }
 }
