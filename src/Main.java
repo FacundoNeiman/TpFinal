@@ -127,8 +127,6 @@ public class Main {
         grupoH.addPartido(new Partido(createRandomDate(), ghana, uruguay, randomResult(true),true));
         grupos.add(grupoH);
 
-        //TODO: ARREGLAR ERROR DE QUE SE REPITEN EQUIPOS
-
         System.out.println("Grupos: ");
         for (Grupo grupo : grupos) {
             grupo.mostrarEtapa();
@@ -153,17 +151,17 @@ public class Main {
 
         Llave cuartos = new Llave("Cuartos");
         ArrayList<Equipo> cuartistas = octavos.getEquiposQueAvanzan();
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(0), cuartistas.get(1), randomResult(false),false));
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(2), cuartistas.get(3), randomResult(false),false));
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(4), cuartistas.get(5), randomResult(false),false));
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(6), cuartistas.get(7), randomResult(false),false));
+        for (int i = 0; i < cuartistas.size() - 1; i+= 2) {
+           cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(i), cuartistas.get(i+1), randomResult(false),false));
+        }
         cuartos.mostrarEtapa();
         System.out.println();
         
         Llave semifinales = new Llave("Semifinales");
         ArrayList<Equipo> semifinalistas = cuartos.getEquiposQueAvanzan();
-        semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(0), semifinalistas.get(1), randomResult(false),false));
-        semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(2), semifinalistas.get(3), randomResult(false),false));
+        for (int i = 0; i < semifinalistas.size() - 1; i+= 2) {
+            semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(i), semifinalistas.get(i+1), randomResult(false),false));
+        }
         semifinales.mostrarEtapa();
         System.out.println();
        
