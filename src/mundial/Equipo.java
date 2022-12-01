@@ -43,6 +43,6 @@ public class Equipo {
     
     @Override
     public String toString() {
-        return getNombre() + " - " + getPuntaje();
+        return getNombre();
     }
 }
