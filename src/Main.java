@@ -4,16 +4,19 @@ import java.util.Date;
 
 import mundial.*;
 import sistemaGarage.*;
-import sistemaGarage.vehiculos.Coche;
-import sistemaGarage.vehiculos.Vehiculo;
+import sistemaGarage.vehiculos.*;
+
 
 public class Main {
     public static void main(String[] args) {
-        // Garage garage = new Garage();
-        // garage.abrirGarage(500,50);
-
-        // Coche v1 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
-        
+         Garage garage = new Garage();
+         garage.abrirGarage(500,5);
+         Coche v1 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
+         Moto v2 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
+         Coche v3 = new Coche("AA125BA", "Fiat", "600", 4, 750000, 5);
+         Moto v4 = new Moto("LMN391", "Honda", "X-50", 2, 29050, 150);
+         Coche v5 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
+         Moto v6 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
         // System.out.println(garage);
 
         Equipo qatar = new Equipo("Qatar");
@@ -122,6 +125,13 @@ public class Main {
         grupoH.addPartido(new Partido(createRandomDate(), corea, portugal, randomResult(true)));
         grupoH.addPartido(new Partido(createRandomDate(), ghana, uruguay, randomResult(true)));
         grupos.add(grupoH);
+        System.out.println(grupoH.getEquipos());
+        System.out.println(grupoH.getEquiposQueAvanzan());
+        System.out.println(grupoH.getPartidos());
+        grupoH.mostrarClasificados();
+        grupoH.mostrarEtapa();
+
+        //TODO: ARREGLAR ERROR DE QUE SE REPITEN EQUIPOS
 
         System.out.println("Grupos: ");
         for (Grupo grupo : grupos) {
@@ -135,16 +145,15 @@ public class Main {
         }
         System.out.println();
 
-
         Llave octavos = new Llave("Octavos");
-        octavos.addPartido(new Partido(createRandomDate(), grupoA.getEquiposQueAvanzan().get(0), grupoB.getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupoC.getEquiposQueAvanzan().get(0), grupoD.getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupoE.getEquiposQueAvanzan().get(0), grupoF.getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupoG.getEquiposQueAvanzan().get(0), grupoH.getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupoB.getEquiposQueAvanzan().get(0), grupoA.getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupoD.getEquiposQueAvanzan().get(0), grupoC.getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupoF.getEquiposQueAvanzan().get(0), grupoE.getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupoH.getEquiposQueAvanzan().get(0), grupoG.getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(0).getEquiposQueAvanzan().get(0), grupos.get(1).getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(2).getEquiposQueAvanzan().get(0), grupos.get(3).getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(4).getEquiposQueAvanzan().get(0), grupos.get(5).getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(6).getEquiposQueAvanzan().get(0), grupos.get(7).getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(1).getEquiposQueAvanzan().get(0), grupos.get(0).getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(3).getEquiposQueAvanzan().get(0), grupos.get(2).getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(5).getEquiposQueAvanzan().get(0), grupos.get(4).getEquiposQueAvanzan().get(1), randomResult(false)));
+        octavos.addPartido(new Partido(createRandomDate(), grupos.get(7).getEquiposQueAvanzan().get(0), grupos.get(6).getEquiposQueAvanzan().get(1), randomResult(false)));
         octavos.mostrarEtapa();
         System.out.println();
 
