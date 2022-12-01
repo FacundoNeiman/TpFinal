@@ -4,13 +4,16 @@ import java.util.ArrayList;
 
 public class Grupo extends EtapaMundial{
 
+    private ArrayList<Equipo> equipos;
 
     public Grupo(){
         super();
+        this.equipos = new ArrayList<>();
     }
 
     public Grupo(String descripcionEtapa){
         super(descripcionEtapa);
+        this.equipos = new ArrayList<>();
     }
 
     @Override
@@ -18,7 +21,7 @@ public class Grupo extends EtapaMundial{
         ArrayList<Equipo> equiposQueAvanzan = new ArrayList<>();
         Equipo e1 = new Equipo("");
         Equipo e2 = new Equipo("");
-        for (Equipo equipo : super.getEquipos()) {
+        for (Equipo equipo : this.getEquipos()) {
             if(equipo.getPuntaje() > e1.getPuntaje()){
                 e2 = e1;
                 e1 = equipo;
@@ -37,8 +40,8 @@ public class Grupo extends EtapaMundial{
         super.getPartidos().add(partido);
         partido.getLocal().addPartido(partido);
         partido.getVisitante().addPartido(partido);
-        super.addEquipo(partido.getLocal());
-        super.addEquipo(partido.getVisitante());
+        this.addEquipo(partido.getLocal());
+        this.addEquipo(partido.getVisitante());
     }
 
     @Override
@@ -53,7 +56,29 @@ public class Grupo extends EtapaMundial{
 
     @Override
     public void mostrarEtapa() {
-        System.out.println(super.getDescripcionEtapa() + ": " + super.getEquipos());
+        System.out.println(super.getDescripcionEtapa() + ": " + this.getEquipos());
         
+    }
+
+    private void addEquipo(Equipo equipo){
+        if(!equipoYaExistente(equipo)){
+            getEquipos().add(equipo);
+        }
+    }
+
+    private boolean equipoYaExistente(Equipo equipo){
+        boolean existe = false;
+        int i = 0;
+        while(!existe && i < getEquipos().size()){
+            if(equipo == getEquipos().get(i)){
+                existe = true;
+            }
+            i++;
+        }
+        return existe;
+    }
+
+    public ArrayList<Equipo> getEquipos(){
+        return this.equipos;
     }
 }
