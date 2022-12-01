@@ -22,8 +22,6 @@ public class Coche extends Vehiculo{
 
     @Override
     public String toString() {
-        return "Coche{" +
-                "cantPuertas=" + cantPuertas  + ", " + super.toString() +
-                '}';
+        return "Auto "  + super.toString() + " " + getCantPuertas() + " puertas";
     }
 }

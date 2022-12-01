@@ -13,10 +13,12 @@ public class Main {
         System.out.println("Garage: \n");
         Garage garage = new Garage();
         garage.abrirGarage(500,5);
+        System.out.println("Precio del cambio de rueda: $" + garage.getPrecioCambioRueda());
+        System.out.println("Capacidad máxima: " + garage.getCapacidadMaxima() + " vehículos");
         Coche v1 = new Coche("MZK155", "Chevrolet", "Corsa Classic", 4, 50000, 4);
         Moto v2 = new Moto("JKL555", "Honda", "X-50", 2, 29050, 150);
         Coche v3 = new Coche("AA125BA", "Fiat", "600", 4, 750000, 5);
-        Moto v4 = new Moto("LMN391", "Honda", "X-50", 2, 29050, 150);
+        Moto v4 = new Moto("LMN391", "Honda", "X-50", 2, 29050, 250);
         Coche v5 = new Coche("AB566AA", "Audi", "V-10", 4, 100, 5);
         Moto v6 = new Moto("EKJ903", "Suzuki", "Master", 2, 350000, 300);
         garage.registrarVehiculo(v1);
@@ -31,6 +33,7 @@ public class Main {
         System.out.println("Actualmente hay " + garage.getCantidadVehiculos() + " vehículos en el garage");
         System.out.println("Precio total del cambio de ruedas del garage: $" + garage.getPrecioTotalCambioRueda());
         System.out.println("Kilometraje medio del garage: " + garage.getKilometrajeMedio() + " km");
+        System.out.println("Vehículos en el garage: " + garage.getVehiculos());
         
         System.out.println();
         System.out.println();
