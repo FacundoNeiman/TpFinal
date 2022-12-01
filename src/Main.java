@@ -56,75 +56,75 @@ public class Main {
         ArrayList<Grupo> grupos = new ArrayList<>();
         
         Grupo grupoA = new Grupo("Grupo A");
-        grupoA.addPartido(new Partido(createRandomDate(), qatar, ecuador, randomResult(true)));
-        grupoA.addPartido(new Partido(createRandomDate(),senegal,paisesBajos, randomResult(true)));
-        grupoA.addPartido(new Partido(createRandomDate(),qatar, senegal,randomResult(true)));
-        grupoA.addPartido(new Partido(createRandomDate(),paisesBajos,ecuador,randomResult(true)));
-        grupoA.addPartido(new Partido(createRandomDate(),paisesBajos, qatar,randomResult(true)));
-        grupoA.addPartido(new Partido(createRandomDate(),ecuador,senegal,randomResult(true)));
+        grupoA.addPartido(new Partido(createRandomDate(), qatar, ecuador, randomResult(true),true));
+        grupoA.addPartido(new Partido(createRandomDate(),senegal,paisesBajos, randomResult(true),true));
+        grupoA.addPartido(new Partido(createRandomDate(),qatar, senegal,randomResult(true),true));
+        grupoA.addPartido(new Partido(createRandomDate(),paisesBajos,ecuador,randomResult(true),true));
+        grupoA.addPartido(new Partido(createRandomDate(),paisesBajos, qatar,randomResult(true),true));
+        grupoA.addPartido(new Partido(createRandomDate(),ecuador,senegal,randomResult(true),true));
         grupos.add(grupoA);
 
         Grupo grupoB = new Grupo("Grupo B");
-        grupoB.addPartido(new Partido(createRandomDate(), inglaterra, iran, randomResult(true)));
-        grupoB.addPartido(new Partido(createRandomDate(), estadosUnidos, gales, randomResult(true)));
-        grupoB.addPartido(new Partido(createRandomDate(), gales, iran, randomResult(true)));
-        grupoB.addPartido(new Partido(createRandomDate(), inglaterra, estadosUnidos, randomResult(true)));
-        grupoB.addPartido(new Partido(createRandomDate(), gales, inglaterra, randomResult(true)));
-        grupoB.addPartido(new Partido(createRandomDate(), iran, estadosUnidos, randomResult(true)));
+        grupoB.addPartido(new Partido(createRandomDate(), inglaterra, iran, randomResult(true),true));
+        grupoB.addPartido(new Partido(createRandomDate(), estadosUnidos, gales, randomResult(true),true));
+        grupoB.addPartido(new Partido(createRandomDate(), gales, iran, randomResult(true),true));
+        grupoB.addPartido(new Partido(createRandomDate(), inglaterra, estadosUnidos, randomResult(true),true));
+        grupoB.addPartido(new Partido(createRandomDate(), gales, inglaterra, randomResult(true),true));
+        grupoB.addPartido(new Partido(createRandomDate(), iran, estadosUnidos, randomResult(true),true));
         grupos.add(grupoB);
 
         Grupo grupoC = new Grupo("Grupo C");
-        grupoC.addPartido(new Partido(createRandomDate(), argentina, arabia, randomResult(true)));
-        grupoC.addPartido(new Partido(createRandomDate(), mexico, polonia, randomResult(true)));
-        grupoC.addPartido(new Partido(createRandomDate(), polonia, arabia, randomResult(true)));
-        grupoC.addPartido(new Partido(createRandomDate(), argentina, mexico, randomResult(true)));
-        grupoC.addPartido(new Partido(createRandomDate(), polonia, argentina, randomResult(true)));
-        grupoC.addPartido(new Partido(createRandomDate(), arabia, mexico, randomResult(true)));
+        grupoC.addPartido(new Partido(createRandomDate(), argentina, arabia, randomResult(true),true));
+        grupoC.addPartido(new Partido(createRandomDate(), mexico, polonia, randomResult(true),true));
+        grupoC.addPartido(new Partido(createRandomDate(), polonia, arabia, randomResult(true),true));
+        grupoC.addPartido(new Partido(createRandomDate(), argentina, mexico, randomResult(true),true));
+        grupoC.addPartido(new Partido(createRandomDate(), polonia, argentina, randomResult(true),true));
+        grupoC.addPartido(new Partido(createRandomDate(), arabia, mexico, randomResult(true),true));
         grupos.add(grupoC);
 
         Grupo grupoD = new Grupo("Grupo D");
-        grupoD.addPartido(new Partido(createRandomDate(), dinamarca, tunez, randomResult(true)));
-        grupoD.addPartido(new Partido(createRandomDate(), francia, australia, randomResult(true)));
-        grupoD.addPartido(new Partido(createRandomDate(), tunez, australia, randomResult(true)));
-        grupoD.addPartido(new Partido(createRandomDate(), francia, dinamarca, randomResult(true)));
-        grupoD.addPartido(new Partido(createRandomDate(), tunez, francia, randomResult(true)));
-        grupoD.addPartido(new Partido(createRandomDate(), australia, dinamarca, randomResult(true)));
+        grupoD.addPartido(new Partido(createRandomDate(), dinamarca, tunez, randomResult(true),true));
+        grupoD.addPartido(new Partido(createRandomDate(), francia, australia, randomResult(true),true));
+        grupoD.addPartido(new Partido(createRandomDate(), tunez, australia, randomResult(true),true));
+        grupoD.addPartido(new Partido(createRandomDate(), francia, dinamarca, randomResult(true),true));
+        grupoD.addPartido(new Partido(createRandomDate(), tunez, francia, randomResult(true),true));
+        grupoD.addPartido(new Partido(createRandomDate(), australia, dinamarca, randomResult(true),true));
         grupos.add(grupoD);
 
         Grupo grupoE = new Grupo("Grupo E");
-        grupoE.addPartido(new Partido(createRandomDate(), alemania, japon, randomResult(true)));
-        grupoE.addPartido(new Partido(createRandomDate(), espana, costaRica, randomResult(true)));
-        grupoE.addPartido(new Partido(createRandomDate(), japon, costaRica, randomResult(true)));
-        grupoE.addPartido(new Partido(createRandomDate(), espana, alemania, randomResult(true)));
-        grupoE.addPartido(new Partido(createRandomDate(), costaRica, alemania, randomResult(true)));
-        grupoE.addPartido(new Partido(createRandomDate(), japon, espana, randomResult(true)));
+        grupoE.addPartido(new Partido(createRandomDate(), alemania, japon, randomResult(true),true));
+        grupoE.addPartido(new Partido(createRandomDate(), espana, costaRica, randomResult(true),true));
+        grupoE.addPartido(new Partido(createRandomDate(), japon, costaRica, randomResult(true),true));
+        grupoE.addPartido(new Partido(createRandomDate(), espana, alemania, randomResult(true),true));
+        grupoE.addPartido(new Partido(createRandomDate(), costaRica, alemania, randomResult(true),true));
+        grupoE.addPartido(new Partido(createRandomDate(), japon, espana, randomResult(true),true));
         grupos.add(grupoE);
 
         Grupo grupoF = new Grupo("Grupo F");
-        grupoF.addPartido(new Partido(createRandomDate(), marruecos, croacia, randomResult(true)));
-        grupoF.addPartido(new Partido(createRandomDate(), belgica, canada, randomResult(true)));
-        grupoF.addPartido(new Partido(createRandomDate(), belgica, marruecos, randomResult(true)));
-        grupoF.addPartido(new Partido(createRandomDate(), croacia, canada, randomResult(true)));
-        grupoF.addPartido(new Partido(createRandomDate(), croacia, belgica, randomResult(true)));
-        grupoF.addPartido(new Partido(createRandomDate(), canada, marruecos, randomResult(true)));
+        grupoF.addPartido(new Partido(createRandomDate(), marruecos, croacia, randomResult(true),true));
+        grupoF.addPartido(new Partido(createRandomDate(), belgica, canada, randomResult(true),true));
+        grupoF.addPartido(new Partido(createRandomDate(), belgica, marruecos, randomResult(true),true));
+        grupoF.addPartido(new Partido(createRandomDate(), croacia, canada, randomResult(true),true));
+        grupoF.addPartido(new Partido(createRandomDate(), croacia, belgica, randomResult(true),true));
+        grupoF.addPartido(new Partido(createRandomDate(), canada, marruecos, randomResult(true),true));
         grupos.add(grupoF);
 
         Grupo grupoG = new Grupo("Grupo G");
-        grupoG.addPartido(new Partido(createRandomDate(), suiza, camerun, randomResult(true)));
-        grupoG.addPartido(new Partido(createRandomDate(), brasil, serbia, randomResult(true)));
-        grupoG.addPartido(new Partido(createRandomDate(), camerun, serbia, randomResult(true)));
-        grupoG.addPartido(new Partido(createRandomDate(), brasil, suiza, randomResult(true)));
-        grupoG.addPartido(new Partido(createRandomDate(), camerun, brasil, randomResult(true)));
-        grupoG.addPartido(new Partido(createRandomDate(), serbia, suiza, randomResult(true)));
+        grupoG.addPartido(new Partido(createRandomDate(), suiza, camerun, randomResult(true), true));
+        grupoG.addPartido(new Partido(createRandomDate(), brasil, serbia, randomResult(true),true));
+        grupoG.addPartido(new Partido(createRandomDate(), camerun, serbia, randomResult(true),true));
+        grupoG.addPartido(new Partido(createRandomDate(), brasil, suiza, randomResult(true),true));
+        grupoG.addPartido(new Partido(createRandomDate(), camerun, brasil, randomResult(true),true));
+        grupoG.addPartido(new Partido(createRandomDate(), serbia, suiza, randomResult(true),true));
         grupos.add(grupoG);
 
         Grupo grupoH = new Grupo("Grupo H");
-        grupoH.addPartido(new Partido(createRandomDate(), uruguay, corea, randomResult(true)));
-        grupoH.addPartido(new Partido(createRandomDate(), portugal, ghana, randomResult(true)));
-        grupoH.addPartido(new Partido(createRandomDate(), corea, ghana, randomResult(true)));
-        grupoH.addPartido(new Partido(createRandomDate(), portugal, uruguay, randomResult(true)));
-        grupoH.addPartido(new Partido(createRandomDate(), corea, portugal, randomResult(true)));
-        grupoH.addPartido(new Partido(createRandomDate(), ghana, uruguay, randomResult(true)));
+        grupoH.addPartido(new Partido(createRandomDate(), uruguay, corea, randomResult(true),true));
+        grupoH.addPartido(new Partido(createRandomDate(), portugal, ghana, randomResult(true),true));
+        grupoH.addPartido(new Partido(createRandomDate(), corea, ghana, randomResult(true),true));
+        grupoH.addPartido(new Partido(createRandomDate(), portugal, uruguay, randomResult(true),true));
+        grupoH.addPartido(new Partido(createRandomDate(), corea, portugal, randomResult(true),true));
+        grupoH.addPartido(new Partido(createRandomDate(), ghana, uruguay, randomResult(true),true));
         grupos.add(grupoH);
 
         //TODO: ARREGLAR ERROR DE QUE SE REPITEN EQUIPOS
@@ -143,35 +143,33 @@ public class Main {
 
         Llave octavos = new Llave("Octavos");
         for (int i = 0; i < grupos.size() - 1; i+= 2) {
-            System.out.println( grupos.get(i).getEquiposQueAvanzan().get(0) +"  VS   " +grupos.get(i+1).getEquiposQueAvanzan().get(1));
-            octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i+1).getEquiposQueAvanzan().get(1), randomResult(false)));
+            octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i+1).getEquiposQueAvanzan().get(1), randomResult(false), false));
         }
         for (int i = 1; i < grupos.size(); i+= 2) {
-            System.out.println( grupos.get(i).getEquiposQueAvanzan().get(0) +"  VS   " +grupos.get(i-1).getEquiposQueAvanzan().get(1));
-            octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i-1).getEquiposQueAvanzan().get(1), randomResult(false)));
+            octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i-1).getEquiposQueAvanzan().get(1), randomResult(false),false));
         }
         octavos.mostrarEtapa();
         System.out.println();
 
         Llave cuartos = new Llave("Cuartos");
         ArrayList<Equipo> cuartistas = octavos.getEquiposQueAvanzan();
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(0), cuartistas.get(1), randomResult(false)));
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(2), cuartistas.get(3), randomResult(false)));
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(4), cuartistas.get(5), randomResult(false)));
-        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(6), cuartistas.get(7), randomResult(false)));
+        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(0), cuartistas.get(1), randomResult(false),false));
+        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(2), cuartistas.get(3), randomResult(false),false));
+        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(4), cuartistas.get(5), randomResult(false),false));
+        cuartos.addPartido(new Partido(createRandomDate(), cuartistas.get(6), cuartistas.get(7), randomResult(false),false));
         cuartos.mostrarEtapa();
         System.out.println();
         
         Llave semifinales = new Llave("Semifinales");
         ArrayList<Equipo> semifinalistas = cuartos.getEquiposQueAvanzan();
-        semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(0), semifinalistas.get(1), randomResult(false)));
-        semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(2), semifinalistas.get(3), randomResult(false)));
+        semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(0), semifinalistas.get(1), randomResult(false),false));
+        semifinales.addPartido(new Partido(createRandomDate(), semifinalistas.get(2), semifinalistas.get(3), randomResult(false),false));
         semifinales.mostrarEtapa();
         System.out.println();
        
         Llave finales = new Llave("Final");
         ArrayList<Equipo> finalistas = semifinales.getEquiposQueAvanzan();
-        finales.addPartido(new Partido(createRandomDate(), finalistas.get(0), finalistas.get(1), randomResult(false)));
+        finales.addPartido(new Partido(createRandomDate(), finalistas.get(0), finalistas.get(1), randomResult(false),false));
         finales.mostrarEtapa();
         System.out.println();
         System.out.print("Campeon: ");

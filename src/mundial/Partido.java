@@ -8,11 +8,11 @@ public class Partido {
     private Equipo visitante;
     private Resultado resultado;
 
-    public Partido(Date fecha, Equipo local, Equipo visitante, Resultado resultado){
+    public Partido(Date fecha, Equipo local, Equipo visitante, Resultado resultado, boolean faseDeGrupos){
         setFecha(fecha);
         setLocal(local);
         setVisitante(visitante);
-        setResultado(resultado);
+        setResultado(resultado,faseDeGrupos);
     }
 
     public Partido(){}
@@ -45,17 +45,17 @@ public class Partido {
         return resultado;
     }
 
-    public void setResultado(Resultado resultado) {
+    public void setResultado(Resultado resultado, boolean faseDeGrupos) {
         this.resultado = resultado;
-        if(resultado.ganoLocal()){
-            getLocal().addPuntaje(3);
-        }
-        else if(resultado.empate()){
-            getLocal().addPuntaje(1);
-            getVisitante().addPuntaje(1);
-        }
-        else{
-            getVisitante().addPuntaje(3);
+        if(faseDeGrupos) {
+            if (resultado.ganoLocal()) {
+                getLocal().addPuntaje(3);
+            } else if (resultado.empate()) {
+                getLocal().addPuntaje(1);
+                getVisitante().addPuntaje(1);
+            } else {
+                getVisitante().addPuntaje(3);
+            }
         }
     }
 
