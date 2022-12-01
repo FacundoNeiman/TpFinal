@@ -43,13 +43,13 @@ public class Llave extends EtapaMundial{
 
     @Override
     public void mostrarEtapa() {
-        System.out.println(super.getDescripcionEtapa() + ": " + super.getEquipos());
+        System.out.println(super.getDescripcionEtapa() + ": \n" +super.getPartidos());
         
     }
 
     @Override
     public void mostrarClasificados() {
-        System.out.println(super.getEquipos());
+        System.out.println(this.getEquiposQueAvanzan());
         
     }
 }
