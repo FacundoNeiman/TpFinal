@@ -38,4 +38,11 @@ public class Resultado {
             this.golesLocal = golesLocal;
         }
     }
+
+    @Override
+    public String toString() {
+        return this.getGolesLocal() + " - " + this.getGolesVisitante();
+    }
+
+    
 }
