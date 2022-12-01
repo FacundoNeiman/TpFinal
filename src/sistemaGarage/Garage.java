@@ -24,23 +24,43 @@ public class Garage {
     }
 
     public boolean registrarVehiculo(Vehiculo vehiculo){
-        if (hayEspacio()) {
-            this.vehiculos.add(vehiculo);
-            System.out.println("Vehículo añadido exitosamente!");
-            return true;
+        if(existe(vehiculo)){
+            System.out.println("El vehículo ya se encuentra en el garage");
+            return false;
         }
-        else{
+        if(!hayEspacio()){
             System.out.println("No se ha podido añadir al vehiculo. Garage lleno");
             return false;
         }
+            this.vehiculos.add(vehiculo);
+            System.out.println("Vehículo añadido exitosamente!");
+            return true;
     }
 
     private boolean hayEspacio(){
         return getCantidadVehiculos() < getCapacidadMaxima();
     }
 
+    private boolean existe(Vehiculo vehiculo){
+        int i = 0;
+        boolean existe = false;
+        while(!existe && i < this.getCantidadVehiculos()){
+            if(this.getVehiculos().get(i) == vehiculo){
+                existe = true;
+            }
+            i++;
+        }
+
+        return existe;
+    }
+
     public void retirarVehiculo(Vehiculo vehiculo){
+        if(existe(vehiculo)){
         this.vehiculos.remove(vehiculo);
+        }
+        else{
+            System.out.println("El vehículo: " + vehiculo.getPatente() + " no se encuentra en el garage");
+        }
     }
 
     public int getCantidadVehiculos(){
@@ -77,6 +97,14 @@ public class Garage {
 
     public void setCapacidadMaxima(int capacidadMaxima) {
         this.capacidadMaxima = capacidadMaxima;
+    }
+
+    public ArrayList<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+    public void setVehiculos(ArrayList<Vehiculo> vehiculos) {
+        this.vehiculos = vehiculos;
     }
 
     @Override
