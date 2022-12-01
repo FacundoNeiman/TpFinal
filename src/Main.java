@@ -143,13 +143,11 @@ public class Main {
 
         Llave octavos = new Llave("Octavos");
         for (int i = 0; i < grupos.size() - 1; i+= 2) {
-            System.out.println(i + " " + 0);
-            System.out.println(i + 1 + " " + 1);
+            System.out.println( grupos.get(i).getEquiposQueAvanzan().get(0) +"  VS   " +grupos.get(i+1).getEquiposQueAvanzan().get(1));
             octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i+1).getEquiposQueAvanzan().get(1), randomResult(false)));
         }
         for (int i = 1; i < grupos.size(); i+= 2) {
-            System.out.println(i + " " + 0);
-            System.out.println(i - 1 + " " + 1);
+            System.out.println( grupos.get(i).getEquiposQueAvanzan().get(0) +"  VS   " +grupos.get(i-1).getEquiposQueAvanzan().get(1));
             octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i-1).getEquiposQueAvanzan().get(1), randomResult(false)));
         }
         octavos.mostrarEtapa();
