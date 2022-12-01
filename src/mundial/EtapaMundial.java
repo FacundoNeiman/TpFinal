@@ -44,7 +44,7 @@ public abstract class EtapaMundial {
         return existe;
     }
 
-    protected ArrayList<Partido> getPartidos(){
+    public ArrayList<Partido> getPartidos(){
         return this.partidos;
     }
 
