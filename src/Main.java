@@ -126,11 +126,6 @@ public class Main {
         grupoH.addPartido(new Partido(createRandomDate(), corea, portugal, randomResult(true)));
         grupoH.addPartido(new Partido(createRandomDate(), ghana, uruguay, randomResult(true)));
         grupos.add(grupoH);
-        System.out.println(grupoH.getEquipos());
-        System.out.println(grupoH.getEquiposQueAvanzan());
-        System.out.println(grupoH.getPartidos());
-        grupoH.mostrarClasificados();
-        grupoH.mostrarEtapa();
 
         //TODO: ARREGLAR ERROR DE QUE SE REPITEN EQUIPOS
 
@@ -147,14 +142,16 @@ public class Main {
         System.out.println();
 
         Llave octavos = new Llave("Octavos");
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(0).getEquiposQueAvanzan().get(0), grupos.get(1).getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(2).getEquiposQueAvanzan().get(0), grupos.get(3).getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(4).getEquiposQueAvanzan().get(0), grupos.get(5).getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(6).getEquiposQueAvanzan().get(0), grupos.get(7).getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(1).getEquiposQueAvanzan().get(0), grupos.get(0).getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(3).getEquiposQueAvanzan().get(0), grupos.get(2).getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(5).getEquiposQueAvanzan().get(0), grupos.get(4).getEquiposQueAvanzan().get(1), randomResult(false)));
-        octavos.addPartido(new Partido(createRandomDate(), grupos.get(7).getEquiposQueAvanzan().get(0), grupos.get(6).getEquiposQueAvanzan().get(1), randomResult(false)));
+        for (int i = 0; i < grupos.size() - 1; i+= 2) {
+            System.out.println(i + " " + 0);
+            System.out.println(i + 1 + " " + 1);
+            octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i+1).getEquiposQueAvanzan().get(1), randomResult(false)));
+        }
+        for (int i = 1; i < grupos.size(); i+= 2) {
+            System.out.println(i + " " + 0);
+            System.out.println(i - 1 + " " + 1);
+            octavos.addPartido(new Partido(createRandomDate(), grupos.get(i).getEquiposQueAvanzan().get(0), grupos.get(i-1).getEquiposQueAvanzan().get(1), randomResult(false)));
+        }
         octavos.mostrarEtapa();
         System.out.println();
 
